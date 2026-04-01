@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>丽贝德科技（越南）有限公司 | Libeide Technology Vietnam</title>
+  <meta name="description" content="丽贝德专注于工业自动化、电气控制集成与智能输送系统，为轮胎制造及相关工业场景提供一体化解决方案。" />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0b1b32;
+      --card: rgba(255,255,255,0.06);
+      --card-strong: rgba(255,255,255,0.10);
+      --border: rgba(255,255,255,0.12);
+      --text: #eef4ff;
+      --muted: #b7c6de;
+      --accent: #5ee7ff;
+      --accent-2: #8aa4ff;
+      --shadow: 0 20px 60px rgba(0,0,0,0.30);
+      --radius: 24px;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(94,231,255,0.18), transparent 28%),
+        radial-gradient(circle at 100% 20%, rgba(138,164,255,0.14), transparent 24%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .nav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(7,17,31,0.72);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; min-height: 74px;
+    }
+    .brand small {
+      display: block; letter-spacing: 0.25em; font-size: 11px; color: var(--accent); margin-bottom: 4px;
+    }
+    .brand strong { font-size: 15px; font-weight: 600; color: var(--text); }
+    .nav-links { display: flex; gap: 22px; color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--text); }
+    .lang-switch {
+      display: inline-flex; gap: 6px; padding: 5px;
+      border: 1px solid var(--border); border-radius: 999px; background: rgba(255,255,255,0.04);
+    }
+    .lang-switch button {
+      border: 0; cursor: pointer; background: transparent; color: var(--muted);
+      padding: 8px 12px; border-radius: 999px; font-size: 13px;
+    }
+    .lang-switch button.active { background: #fff; color: #0d1727; }
+    .hero {
+      display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: center;
+      padding: 72px 0 54px;
+    }
+    .eyebrow {
+      display: inline-flex; padding: 8px 14px; border-radius: 999px;
+      background: rgba(94,231,255,0.10); border: 1px solid rgba(94,231,255,0.18);
+      color: #baf5ff; font-size: 13px; margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(36px, 5.4vw, 62px);
+      line-height: 1.06; letter-spacing: -0.03em; margin: 0;
+    }
+    .hero p {
+      color: var(--muted); font-size: 18px; line-height: 1.85; max-width: 740px; margin: 18px 0 0;
+    }
+    .hero-actions { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 18px; border-radius: 18px; font-weight: 600; font-size: 15px;
+      border: 1px solid transparent; transition: 0.2s ease;
+    }
+    .btn-primary {
+      color: #07111f; background: linear-gradient(135deg, #ffffff, #dff9ff);
+      box-shadow: 0 8px 30px rgba(94,231,255,0.18);
+    }
+    .btn-primary:hover { transform: translateY(-1px); }
+    .btn-secondary {
+      color: var(--text); background: rgba(255,255,255,0.05); border-color: var(--border);
+    }
+    .grid-cards { display: grid; gap: 16px; }
+    .hero-card, .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .hero-card { padding: 22px; }
+    .hero-card-title { color: #baf5ff; font-size: 13px; margin-bottom: 14px; }
+    .mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .mini-pill {
+      padding: 15px 14px; border-radius: 18px; background: rgba(8,16,31,0.62); border: 1px solid var(--border);
+      font-size: 14px; color: var(--text);
+    }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+    .stat-box {
+      padding: 18px; border-radius: 22px; background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+    }
+    .stat-box strong { display: block; font-size: 30px; line-height: 1; }
+    .stat-box span { display: block; margin-top: 10px; font-size: 13px; color: var(--muted); }
+    section { padding: 26px 0 26px; }
+    .section-head { max-width: 760px; margin-bottom: 22px; }
+    .section-tag {
+      display: inline-flex; padding: 7px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border); color: var(--muted); font-size: 13px;
+      margin-bottom: 12px;
+    }
+    h2 { font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin: 0; }
+    .two-col { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 26px; align-items: start; }
+    .lead {
+      font-size: 18px; line-height: 1.9; color: var(--muted); margin: 0;
+    }
+    .why-grid, .solutions-grid, .projects-grid, .highlights-grid {
+      display: grid; gap: 16px;
+    }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .solutions-grid { grid-template-columns: repeat(3, 1fr); }
+    .projects-grid { grid-template-columns: 1fr 1fr; }
+    .highlights-grid { grid-template-columns: repeat(5, 1fr); }
+    .card { padding: 22px; }
+    .card h3 { margin: 0 0 10px; font-size: 20px; }
+    .card p, .card li { margin: 0; color: var(--muted); line-height: 1.8; font-size: 15px; }
+    .solution-no { font-size: 13px; color: #baf5ff; margin-bottom: 12px; display: block; }
+    .project-badge, .country {
+      display: inline-flex; padding: 6px 11px; border-radius: 999px; border: 1px solid var(--border);
+      background: rgba(94,231,255,0.08); color: #caf7ff; font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .countries { display: flex; flex-wrap: wrap; gap: 12px; }
+    .country { background: rgba(255,255,255,0.05); color: var(--text); }
+    .contact-box {
+      display: grid; grid-template-columns: 1fr 0.95fr; gap: 22px;
+      padding: 28px; border-radius: 34px;
+      background: linear-gradient(135deg, rgba(94,231,255,0.09), rgba(255,255,255,0.05), rgba(138,164,255,0.10));
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+    .contact-items { display: grid; gap: 12px; }
+    .contact-item {
+      padding: 18px; border-radius: 22px; background: rgba(8,16,31,0.62); border: 1px solid var(--border);
+    }
+    .contact-item b { display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    footer {
+      border-top: 1px solid var(--border); margin-top: 40px; padding: 22px 0 30px; color: var(--muted); font-size: 14px;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+    @media (max-width: 1080px) {
+      .hero, .two-col, .contact-box { grid-template-columns: 1fr; }
+      .solutions-grid { grid-template-columns: 1fr 1fr; }
+      .highlights-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 800px) {
+      .nav-inner { flex-wrap: wrap; padding: 12px 0; }
+      .nav-links { order: 3; width: 100%; overflow: auto; padding-bottom: 2px; }
+      .mini-grid, .stats-grid, .why-grid, .solutions-grid, .projects-grid, .highlights-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 42px; }
+      .hero p, .lead { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <small>LIBEIDE</small>
+        <strong id="brandName">丽贝德科技（越南）有限公司</strong>
+      </div>
+      <nav class="nav-links">
+        <a href="#about" data-i18n="nav_about">关于我们</a>
+        <a href="#solutions" data-i18n="nav_solutions">解决方案</a>
+        <a href="#highlights" data-i18n="nav_highlights">能力数据</a>
+        <a href="#projects" data-i18n="nav_projects">典型案例</a>
+        <a href="#contact" data-i18n="nav_contact">联系我们</a>
+      </nav>
+      <div class="lang-switch">
+        <button class="active" data-lang="zh">中文</button>
+        <button data-lang="en">English</button>
+        <button data-lang="vi">Tiếng Việt</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow">Industrial Automation · Tire Manufacturing · Smart Intralogistics</div>
+        <h1 data-i18n="hero_title">让轮胎制造与工业物流更智能、更高效、更可靠</h1>
+        <p data-i18n="hero_subtitle">丽贝德专注于工业自动化、电气控制集成与智能输送系统，为轮胎制造及相关工业场景提供从方案设计、成套配电到安装调试的一体化解决方案。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#solutions" data-i18n="hero_primary">查看解决方案</a>
+          <a class="btn btn-secondary" href="#projects" data-i18n="hero_secondary">查看典型案例</a>
+        </div>
+      </div>
+      <div class="grid-cards">
+        <div class="hero-card">
+          <div class="hero-card-title">Core Focus</div>
+          <div class="mini-grid">
+            <div class="mini-pill">Tire Plant Automation</div>
+            <div class="mini-pill">Electrical Integration</div>
+            <div class="mini-pill">Intelligent Conveying</div>
+            <div class="mini-pill">AS/RS Warehousing</div>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-box"><strong>54</strong><span data-i18n="stat1">最大入库量（条/时）</span></div>
+          <div class="stat-box"><strong>108</strong><span data-i18n="stat2">最大出库量（条/时）</span></div>
+          <div class="stat-box"><strong>36,000</strong><span data-i18n="stat3">日输送能力（条）</span></div>
+          <div class="stat-box"><strong>&lt;0.01%</strong><span data-i18n="stat4">条码扫描出错率</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="two-col">
+        <div class="section-head">
+          <div class="section-tag" data-i18n="about_tag">关于我们</div>
+          <h2 data-i18n="about_title">立足越南，服务全球工业客户</h2>
+        </div>
+        <div>
+          <p class="lead" data-i18n="about_body">丽贝德于 2021 年进入越南市场，依托成熟的自动化工程团队，为客户提供电气控制系统设计、成套配电、软件开发、现场安装与调试等全流程服务。公司长期服务于轮胎制造、水处理、化工、制药、农业等行业，尤其在轮胎工厂自动化、智能输送线和立体仓储系统方面积累了丰富经验。</p>
+          <div class="why-grid" style="margin-top:18px">
+            <div class="card"><h3 data-i18n="why1_title">深耕轮胎行业自动化</h3><p data-i18n="why1_text">熟悉轮胎生产工艺、控制逻辑与现场流程。</p></div>
+            <div class="card"><h3 data-i18n="why2_title">一站式工程交付</h3><p data-i18n="why2_text">覆盖方案设计、成套配电、安装调试与售后支持。</p></div>
+            <div class="card"><h3 data-i18n="why3_title">面向智能物流升级</h3><p data-i18n="why3_text">结合 PLC 控制、全景扫码、自动分拣、输送调度和立体仓储。</p></div>
+            <div class="card"><h3 data-i18n="why4_title">具备国际项目经验</h3><p data-i18n="why4_text">项目覆盖越南、柬埔寨、印尼、土耳其、阿尔及利亚、科特迪瓦等国家和地区。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="section-head">
+        <div class="section-tag" data-i18n="solutions_tag">解决方案</div>
+        <h2 data-i18n="solutions_title">覆盖电气控制、物流输送与仓储自动化</h2>
+      </div>
+      <div class="solutions-grid">
+        <div class="card"><span class="solution-no">01</span><p data-i18n="solution1">电气控制系统方案设计与研发</p></div>
+        <div class="card"><span class="solution-no">02</span><p data-i18n="solution2">成套配电柜设计与集成</p></div>
+        <div class="card"><span class="solution-no">03</span><p data-i18n="solution3">现场安装、编程与调试</p></div>
+        <div class="card"><span class="solution-no">04</span><p data-i18n="solution4">智能输送线与自动分拣系统</p></div>
+        <div class="card"><span class="solution-no">05</span><p data-i18n="solution5">智能立体库与仓储物流自动化</p></div>
+        <div class="card"><span class="solution-no">06</span><p data-i18n="solution6">轮胎工厂自动化升级与改造</p></div>
+      </div>
+    </section>
+
+    <section id="highlights">
+      <div class="section-head">
+        <div class="section-tag" data-i18n="highlights_tag">能力数据</div>
+        <h2 data-i18n="highlights_title">以实际项目能力支撑稳定交付</h2>
+      </div>
+      <div class="highlights-grid">
+        <div class="card"><h3>54 条/时</h3><p data-i18n="highlight1">最大入库量</p></div>
+        <div class="card"><h3>108 条/时</h3><p data-i18n="highlight2">最大出库量</p></div>
+        <div class="card"><h3>36,000 条/日</h3><p data-i18n="highlight3">日输送能力</p></div>
+        <div class="card"><h3>≤ 6 秒/条</h3><p data-i18n="highlight4">扫描站通过时间</p></div>
+        <div class="card"><h3>&lt; 0.01%</h3><p data-i18n="highlight5">条码扫描出错率</p></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <div class="section-tag" data-i18n="projects_tag">典型案例</div>
+        <h2 data-i18n="projects_title">面向轮胎工厂与工业物流场景的成熟项目经验</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="card"><div class="project-badge">Project Case</div><h3 data-i18n="project1_title">赛轮（越南）OTR 成品立体库</h3><p data-i18n="project1_text">通过全景扫描轮胎条码，系统自动分配入库或异常口，最大入库量 54 条/时，最大出库量 108 条/时。</p></div>
+        <div class="card"><div class="project-badge">Project Case</div><h3 data-i18n="project2_title">赛轮（越南）PCR 成品立体库</h3><p data-i18n="project2_text">项目日输送能力可达 36,000 条，满足高节拍成品轮胎仓储与物流需求。</p></div>
+        <div class="card"><div class="project-badge">Project Case</div><h3 data-i18n="project3_title">赛轮（越南）PCR 成品输送线</h3><p data-i18n="project3_text">采用全景扫描方案，轮胎通过扫描站时间不超过 6 秒/条，扫码错误率低于 0.01%。</p></div>
+        <div class="card"><div class="project-badge">Project Case</div><h3 data-i18n="project4_title">IRIS 阿尔及利亚 PCR 质检输送线</h3><p data-i18n="project4_text">实现硫化后成品胎汇流、扫码分拣与外检输送，支撑高节拍质检流程。</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="two-col">
+        <div class="section-head">
+          <div class="section-tag" data-i18n="global_tag">全球交付</div>
+          <h2 data-i18n="global_title">项目经验覆盖多个国家与地区</h2>
+        </div>
+        <div class="card">
+          <div class="countries">
+            <span class="country" data-i18n="country1">越南</span>
+            <span class="country" data-i18n="country2">柬埔寨</span>
+            <span class="country" data-i18n="country3">印尼</span>
+            <span class="country" data-i18n="country4">土耳其</span>
+            <span class="country" data-i18n="country5">阿尔及利亚</span>
+            <span class="country" data-i18n="country6">科特迪瓦</span>
+            <span class="country" data-i18n="country7">中国</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <div class="section-tag" data-i18n="contact_tag">联系我们</div>
+          <h2 data-i18n="contact_title">寻找可靠的工业自动化合作伙伴？</h2>
+          <p class="lead" style="margin-top:14px" data-i18n="contact_text">欢迎联系我们，获取适合您工厂场景的自动化解决方案。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:jiangtao810@163.com" data-i18n="contact_btn">立即联系</a>
+          </div>
+        </div>
+        <div class="contact-items">
+          <div class="contact-item"><b data-i18n="label_address">地址</b><div data-i18n="contact_address">越南西宁省展鹏坊第 13 号地图第 76 号地块</div></div>
+          <div class="contact-item"><b data-i18n="label_phone">电话</b><div>15822951191 / VN-0367751061</div></div>
+          <div class="contact-item"><b data-i18n="label_email">邮箱</b><div>jiangtao810@163.com</div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div id="footerBrand">丽贝德科技（越南）有限公司</div>
+      <div data-i18n="footer_text">以技术驱动制造升级，以自动化创造更高价值。</div>
+    </div>
+  </footer>
+
+  <script>
+    const dict = {
+      zh: {
+        brand: "丽贝德科技（越南）有限公司",
+        nav_about: "关于我们",
+        nav_solutions: "解决方案",
+        nav_highlights: "能力数据",
+        nav_projects: "典型案例",
+        nav_contact: "联系我们",
+        hero_title: "让轮胎制造与工业物流更智能、更高效、更可靠",
+        hero_subtitle: "丽贝德专注于工业自动化、电气控制集成与智能输送系统，为轮胎制造及相关工业场景提供从方案设计、成套配电到安装调试的一体化解决方案。",
+        hero_primary: "查看解决方案",
+        hero_secondary: "查看典型案例",
+        stat1: "最大入库量（条/时）",
+        stat2: "最大出库量（条/时）",
+        stat3: "日输送能力（条）",
+        stat4: "条码扫描出错率",
+        about_tag: "关于我们",
+        about_title: "立足越南，服务全球工业客户",
+        about_body: "丽贝德于 2021 年进入越南市场，依托成熟的自动化工程团队，为客户提供电气控制系统设计、成套配电、软件开发、现场安装与调试等全流程服务。公司长期服务于轮胎制造、水处理、化工、制药、农业等行业，尤其在轮胎工厂自动化、智能输送线和立体仓储系统方面积累了丰富经验。",
+        why1_title: "深耕轮胎行业自动化",
+        why1_text: "熟悉轮胎生产工艺、控制逻辑与现场流程。",
+        why2_title: "一站式工程交付",
+        why2_text: "覆盖方案设计、成套配电、安装调试与售后支持。",
+        why3_title: "面向智能物流升级",
+        why3_text: "结合 PLC 控制、全景扫码、自动分拣、输送调度和立体仓储。",
+        why4_title: "具备国际项目经验",
+        why4_text: "项目覆盖越南、柬埔寨、印尼、土耳其、阿尔及利亚、科特迪瓦等国家和地区。",
+        solutions_tag: "解决方案",
+        solutions_title: "覆盖电气控制、物流输送与仓储自动化",
+        solution1: "电气控制系统方案设计与研发",
+        solution2: "成套配电柜设计与集成",
+        solution3: "现场安装、编程与调试",
+        solution4: "智能输送线与自动分拣系统",
+        solution5: "智能立体库与仓储物流自动化",
+        solution6: "轮胎工厂自动化升级与改造",
+        highlights_tag: "能力数据",
+        highlights_title: "以实际项目能力支撑稳定交付",
+        highlight1: "最大入库量",
+        highlight2: "最大出库量",
+        highlight3: "日输送能力",
+        highlight4: "扫描站通过时间",
+        highlight5: "条码扫描出错率",
+        projects_tag: "典型案例",
+        projects_title: "面向轮胎工厂与工业物流场景的成熟项目经验",
+        project1_title: "赛轮（越南）OTR 成品立体库",
+        project1_text: "通过全景扫描轮胎条码，系统自动分配入库或异常口，最大入库量 54 条/时，最大出库量 108 条/时。",
+        project2_title: "赛轮（越南）PCR 成品立体库",
+        project2_text: "项目日输送能力可达 36,000 条，满足高节拍成品轮胎仓储与物流需求。",
+        project3_title: "赛轮（越南）PCR 成品输送线",
+        project3_text: "采用全景扫描方案，轮胎通过扫描站时间不超过 6 秒/条，扫码错误率低于 0.01%。",
+        project4_title: "IRIS 阿尔及利亚 PCR 质检输送线",
+        project4_text: "实现硫化后成品胎汇流、扫码分拣与外检输送，支撑高节拍质检流程。",
+        global_tag: "全球交付",
+        global_title: "项目经验覆盖多个国家与地区",
+        country1: "越南",
+        country2: "柬埔寨",
+        country3: "印尼",
+        country4: "土耳其",
+        country5: "阿尔及利亚",
+        country6: "科特迪瓦",
+        country7: "中国",
+        contact_tag: "联系我们",
+        contact_title: "寻找可靠的工业自动化合作伙伴？",
+        contact_text: "欢迎联系我们，获取适合您工厂场景的自动化解决方案。",
+        contact_btn: "立即联系",
+        label_address: "地址",
+        label_phone: "电话",
+        label_email: "邮箱",
+        contact_address: "越南西宁省展鹏坊第 13 号地图第 76 号地块",
+        footer_text: "以技术驱动制造升级，以自动化创造更高价值。"
+      },
+      en: {
+        brand: "Libeide Technology Vietnam Co., Ltd.",
+        nav_about: "About",
+        nav_solutions: "Solutions",
+        nav_highlights: "Highlights",
+        nav_projects: "Projects",
+        nav_contact: "Contact",
+        hero_title: "Smarter, Faster and More Reliable Automation for Tire Manufacturing and Industrial Logistics",
+        hero_subtitle: "Libeide provides integrated solutions for industrial automation, electrical control systems and intelligent conveying lines, covering engineering design, panel integration, installation and on-site commissioning.",
+        hero_primary: "Explore Solutions",
+        hero_secondary: "View Projects",
+        stat1: "Max inbound capacity",
+        stat2: "Max outbound capacity",
+        stat3: "Daily conveying capacity",
+        stat4: "Barcode scanning error rate",
+        about_tag: "About",
+        about_title: "Based in Vietnam, Delivering Automation for Global Industry",
+        about_body: "Libeide entered the Vietnamese market in 2021 and provides end-to-end services including electrical control design, panel integration, software development, on-site installation and commissioning. We serve industries such as tire manufacturing, water treatment, chemicals, pharmaceuticals and agriculture, with strong experience in tire plant automation, intelligent conveyor systems and automated warehousing.",
+        why1_title: "Deep expertise in tire industry automation",
+        why1_text: "We understand tire production processes, control logic and plant workflows.",
+        why2_title: "One-stop engineering delivery",
+        why2_text: "From design and panel integration to installation, commissioning and support.",
+        why3_title: "Built for intelligent logistics",
+        why3_text: "Combining PLC control, panoramic barcode scanning, sorting and warehouse automation.",
+        why4_title: "Proven international execution",
+        why4_text: "Project delivery across Vietnam, Cambodia, Indonesia, Türkiye, Algeria and more.",
+        solutions_tag: "Solutions",
+        solutions_title: "Electrical control, conveying systems and warehouse automation",
+        solution1: "Electrical control system design and development",
+        solution2: "Complete power distribution and panel integration",
+        solution3: "On-site installation, programming and commissioning",
+        solution4: "Intelligent conveyor and automated sorting systems",
+        solution5: "AS/RS warehousing and intralogistics automation",
+        solution6: "Automation upgrade and retrofit for tire plants",
+        highlights_tag: "Highlights",
+        highlights_title: "Performance proven by real projects",
+        highlight1: "Max inbound capacity",
+        highlight2: "Max outbound capacity",
+        highlight3: "Daily conveying capacity",
+        highlight4: "Scan station passing time",
+        highlight5: "Barcode scanning error rate",
+        projects_tag: "Projects",
+        projects_title: "Project experience built for tire plants and industrial logistics",
+        project1_title: "Sailun Vietnam OTR Finished Tire AS/RS",
+        project1_text: "Panoramic barcode scanning enables automatic allocation to storage or exception lanes, with max inbound capacity of 54 tires/hour and max outbound capacity of 108 tires/hour.",
+        project2_title: "Sailun Vietnam PCR Finished Tire Warehouse",
+        project2_text: "The project supports daily conveying capacity of up to 36,000 tires for efficient finished-goods warehousing and logistics.",
+        project3_title: "Sailun Vietnam PCR Finished Tire Conveyor Line",
+        project3_text: "With panoramic scanning, passing time at the scanning station is within 6 seconds per tire and barcode error rate is below 0.01%.",
+        project4_title: "IRIS Algeria PCR Inspection Conveyor Line",
+        project4_text: "Supports post-curing tire merging, scanning-based sorting and transfer to inspection for high-throughput operations.",
+        global_tag: "Global Reach",
+        global_title: "Project delivery across multiple countries and regions",
+        country1: "Vietnam",
+        country2: "Cambodia",
+        country3: "Indonesia",
+        country4: "Türkiye",
+        country5: "Algeria",
+        country6: "Côte d'Ivoire",
+        country7: "China",
+        contact_tag: "Contact",
+        contact_title: "Looking for a trusted automation partner?",
+        contact_text: "Talk to us for integrated automation solutions tailored to your factory and logistics workflow.",
+        contact_btn: "Contact Us",
+        label_address: "Address",
+        label_phone: "Phone",
+        label_email: "Email",
+        contact_address: "Plot 76, Map Sheet No. 13, Trảng Bàng Ward, Tây Ninh Province, Vietnam",
+        footer_text: "Upgrade manufacturing with technology and create greater value through automation."
+      },
+      vi: {
+        brand: "CÔNG TY TNHH CÔNG NGHỆ LIBEIDE VIỆT NAM",
+        nav_about: "Giới thiệu",
+        nav_solutions: "Giải pháp",
+        nav_highlights: "Năng lực",
+        nav_projects: "Dự án",
+        nav_contact: "Liên hệ",
+        hero_title: "Tự động hóa thông minh, hiệu quả và tin cậy hơn cho sản xuất lốp xe và logistics công nghiệp",
+        hero_subtitle: "Libeide cung cấp giải pháp tích hợp về tự động hóa công nghiệp, hệ thống điều khiển điện và dây chuyền băng tải thông minh, từ thiết kế kỹ thuật, tủ điện đồng bộ đến lắp đặt và chạy thử tại hiện trường.",
+        hero_primary: "Khám phá giải pháp",
+        hero_secondary: "Xem dự án",
+        stat1: "Năng lực nhập kho tối đa",
+        stat2: "Năng lực xuất kho tối đa",
+        stat3: "Năng lực vận chuyển",
+        stat4: "Tỷ lệ lỗi quét mã vạch",
+        about_tag: "Giới thiệu",
+        about_title: "Có mặt tại Việt Nam, đồng hành cùng khách hàng công nghiệp toàn cầu",
+        about_body: "Libeide hoạt động tại thị trường Việt Nam từ năm 2021, cung cấp dịch vụ trọn gói bao gồm thiết kế điều khiển điện, tủ điện đồng bộ, phát triển phần mềm, lắp đặt và chạy thử tại hiện trường. Chúng tôi phục vụ các ngành như sản xuất lốp xe, xử lý nước, hóa chất, dược phẩm và nông nghiệp, với thế mạnh nổi bật trong tự động hóa nhà máy lốp, dây chuyền băng tải thông minh và kho tự động.",
+        why1_title: "Chuyên sâu trong tự động hóa ngành lốp xe",
+        why1_text: "Hiểu rõ quy trình sản xuất lốp, logic điều khiển và vận hành nhà máy.",
+        why2_title: "Triển khai trọn gói",
+        why2_text: "Từ thiết kế kỹ thuật đến lắp đặt, chạy thử và hỗ trợ sau dự án.",
+        why3_title: "Tối ưu cho logistics thông minh",
+        why3_text: "Kết hợp PLC, quét mã toàn cảnh, phân loại tự động và kho tự động.",
+        why4_title: "Kinh nghiệm dự án quốc tế",
+        why4_text: "Đã triển khai tại Việt Nam, Campuchia, Indonesia, Thổ Nhĩ Kỳ, Algeria và nhiều nơi khác.",
+        solutions_tag: "Giải pháp",
+        solutions_title: "Điều khiển điện, băng tải thông minh và kho tự động",
+        solution1: "Thiết kế và phát triển hệ thống điều khiển điện",
+        solution2: "Thiết kế, tích hợp và lắp ráp tủ điện đồng bộ",
+        solution3: "Lắp đặt tại hiện trường, lập trình và chạy thử",
+        solution4: "Hệ thống băng tải thông minh và phân loại tự động",
+        solution5: "Kho tự động và tự động hóa logistics nội bộ",
+        solution6: "Nâng cấp và cải tạo tự động hóa cho nhà máy lốp",
+        highlights_tag: "Năng lực",
+        highlights_title: "Năng lực đã được kiểm chứng qua dự án thực tế",
+        highlight1: "Năng lực nhập kho tối đa",
+        highlight2: "Năng lực xuất kho tối đa",
+        highlight3: "Năng lực vận chuyển",
+        highlight4: "Thời gian qua trạm quét",
+        highlight5: "Tỷ lệ lỗi quét mã vạch",
+        projects_tag: "Dự án",
+        projects_title: "Kinh nghiệm triển khai phù hợp cho nhà máy lốp và logistics công nghiệp",
+        project1_title: "Kho thành phẩm OTR của Sailun Việt Nam",
+        project1_text: "Hệ thống quét mã toàn cảnh và tự động phân luồng vào kho hoặc cửa ngoại lệ, với năng lực nhập kho 54 lốp/giờ và xuất kho 108 lốp/giờ.",
+        project2_title: "Kho thành phẩm PCR của Sailun Việt Nam",
+        project2_text: "Dự án có năng lực vận chuyển lên tới 36.000 lốp mỗi ngày, đáp ứng nhu cầu logistics thành phẩm quy mô lớn.",
+        project3_title: "Dây chuyền băng tải thành phẩm PCR của Sailun Việt Nam",
+        project3_text: "Giải pháp quét mã toàn cảnh giúp thời gian qua trạm quét không vượt quá 6 giây/lốp và tỷ lệ lỗi thấp hơn 0,01%.",
+        project4_title: "Dây chuyền kiểm tra PCR của IRIS Algeria",
+        project4_text: "Hỗ trợ gom lốp sau lưu hóa, phân loại bằng quét mã và chuyển đến khu ngoại kiểm cho dây chuyền năng suất cao.",
+        global_tag: "Triển khai toàn cầu",
+        global_title: "Kinh nghiệm dự án tại nhiều quốc gia và khu vực",
+        country1: "Việt Nam",
+        country2: "Campuchia",
+        country3: "Indonesia",
+        country4: "Thổ Nhĩ Kỳ",
+        country5: "Algeria",
+        country6: "Bờ Biển Ngà",
+        country7: "Trung Quốc",
+        contact_tag: "Liên hệ",
+        contact_title: "Bạn đang tìm kiếm đối tác tự động hóa đáng tin cậy?",
+        contact_text: "Hãy liên hệ với chúng tôi để nhận giải pháp phù hợp với nhà máy và quy trình logistics của bạn.",
+        contact_btn: "Liên hệ ngay",
+        label_address: "Địa chỉ",
+        label_phone: "Điện thoại",
+        label_email: "Email",
+        contact_address: "Thửa đất số 76, Tờ bản đồ số 13, Phường Trảng Bàng, Tỉnh Tây Ninh, Việt Nam",
+        footer_text: "Nâng cấp sản xuất bằng công nghệ, tạo ra giá trị lớn hơn bằng tự động hóa."
+      }
+    };
+
+    function applyLang(lang) {
+      const map = dict[lang] || dict.zh;
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (map[key]) el.textContent = map[key];
+      });
+      document.getElementById('brandName').textContent = map.brand;
+      document.getElementById('footerBrand').textContent = map.brand;
+      document.querySelectorAll('.lang-switch button').forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      localStorage.setItem('libeide_lang', lang);
+    }
+
+    const defaultLang = localStorage.getItem('libeide_lang') || 'zh';
+    applyLang(defaultLang);
+    document.querySelectorAll('.lang-switch button').forEach((btn) => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+  </script>
+</body>
+</html>
